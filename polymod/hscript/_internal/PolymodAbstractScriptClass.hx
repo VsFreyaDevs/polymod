@@ -53,7 +53,7 @@ abstract PolymodAbstractScriptClass(PolymodScriptClass) from PolymodScriptClass
 
 						case "null":
 							throw "Invalid access to field " + name;
-							return nulll;
+							return null;
 					}
 
 					var varValue:Dynamic = null;
@@ -129,7 +129,7 @@ abstract PolymodAbstractScriptClass(PolymodScriptClass) from PolymodScriptClass
 					var decl = this.findVar(name);
 					switch (decl.set) {
 						case "set":
-							var funcDecl = this.callFunction('set_$name', [value]);
+							this.callFunction('set_$name', [value]);
 							return value;
 
 						case "never" | "null":
